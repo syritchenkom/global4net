@@ -1,30 +1,33 @@
-import { useState, useEffect } from 'react';
+import React from 'react';
 
-import axios from 'axios';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import './App.css';
+import { Container, Grid } from '@mui/material';
+
+import Details from './pages/Details';
+import Home from './pages/Home';
 
 function App() {
-	const [todo, setTodo] = useState('');
-	const [todos, setTodos] = useState([]);
+	//  "homepage": "https://syritchenkom.github.io/Global4Netx/", "dependencies": {
 
-	useEffect(() => {
-		axios
-			.get('https://restcountries.com/v2/name/united')
-			.then((params) => {
-				console.log(params.data);
-			})
-			.then((res) => {
-				setTodos(
-					res.data.map((selectedCountry) => {
-						selectedCountry.completed = false;
-						return selectedCountry;
-					})
-				);
-			});
-	}, []);
-
-	return <div className="App"></div>;
+	return (
+		<Container>
+			<Grid container spacing={7}>
+				<Grid item xs={12} sm={12} md={4} lg={3}>
+					<BrowserRouter>
+						<Routes>
+							<Route path="/" element={<Home />}>
+								Home
+							</Route>
+							<Route path="/details" element={<Details />}>
+								Details
+							</Route>
+						</Routes>
+					</BrowserRouter>
+				</Grid>
+			</Grid>
+		</Container>
+	);
 }
 
 export default App;
