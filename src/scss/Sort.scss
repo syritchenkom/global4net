@@ -1,20 +1,22 @@
 @import './variables.scss';
 
 .sortContainer {
-	.hemeSearchBox {
+	width: 88% !important;
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	margin: 2.5rem 5rem;
+	.sortSearchBox {
 		display: flex;
 		align-items: center;
-		.homeSearchIcon {
+		.sortSearchIcon {
 			margin-top: 15px;
 			margin-right: 5px;
-			color: $color-gray;
+			color: $color-dark-gray;
 		}
-		.homeSearchText {
+		.sortSearchText {
 			margin: 0 5px;
 			width: 100%;
 		}
-
-		// .homeSearch + label {
-		// }
 	}
 }

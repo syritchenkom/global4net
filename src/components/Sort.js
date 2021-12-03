@@ -20,11 +20,11 @@ const Sort = ({ countries, setCountries }) => {
 			{/* Sort Countries */}
 			<Grid container className="sortContainer">
 				{/* Search Countries */}
-				<Grid item className="homeSearch">
-					<Box className="homeSearchBox">
-						<SearchIcon className="homeSearchIcon" />
+				<Grid item className="sortSearch">
+					<Box className="sortSearchBox">
+						<SearchIcon className="sortSearchIcon" />
 						<TextField
-							className="homeSearchText"
+							className="sortSearchText"
 							label="Search country"
 							checked={searchCountries}
 							onChange={searchChange}
