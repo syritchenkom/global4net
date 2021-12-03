@@ -1,0 +1,13 @@
+@import './variables.scss';
+
+.home {
+	margin: 0 !important;
+	padding: 0 !important;
+	.homeTitle {
+		width: 100%;
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		background-color: $color-white;
+	}
+}

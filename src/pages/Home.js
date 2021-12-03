@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
 
-import axios from 'axios';
-
 import {
+	Box,
 	Grid,
-	Input,
-	Stack,
-	Autocomplete,
-	Icon,
-	Paper,
+	TextField,
+	FormControl,
+	InputLabel,
 	Typography,
-	TextField
+	MenuItem,
+	Select,
+	Container
 } from '@mui/material';
 
-import { Box } from '@mui/system';
 import SearchIcon from '@mui/icons-material/Search';
+
+import axios from 'axios';
+
+import Sort from '../components/Sort';
+import '../scss/Pages.scss';
 
 function Home() {
 	const [countries, setCountries] = useState([]);
@@ -37,32 +40,53 @@ function Home() {
 	}, []);
 
 	return (
-		<>
+		<Container className="home">
 			{/* Title */}
-			<Grid container className="home">
-				<Grid item className="home_title">
-					<h1 className>United</h1>
+			<Grid container className="homeTitle">
+				<Grid item>
+					<Typography variant="h5" component="h1">
+						United
+					</Typography>
 				</Grid>
+			</Grid>
 
-				{/* Search input */}
+			<Sort countries={countries} setCountries={setCountries} />
 
-				<Grid item className="home_search">
-					<Box>
-						<Box>
-							<TextField
-								tupe="text"
-								className="todo_search"
-								label="Search country"
-								checked={searchCountries}
-								onChange={searchChange}
-								variant="outlined">
-								<SearchIcon />
-							</TextField>
-						</Box>
+			{/* Sort Countries
+			<Grid container className="sortContainer">
+				
+				<Grid item className="homeSearch">
+					<Box className="homeSearchBox">
+						<SearchIcon className="homeSearchIcon" />
+						<TextField
+							className="homeSearchText"
+							label="Search country"
+							checked={searchCountries}
+							onChange={searchChange}
+							variant="standard"
+						/>
 					</Box>
 				</Grid>
 
-				{/*<Grid item className="">
+				
+				<Grid item className="homeFilter">
+					<FormControl variant="standard" className="homeFilterSearch">
+						<InputLabel>Countries...</InputLabel>
+						<Select value={countries} label="Countries">
+							<MenuItem value="">
+								<em>None</em>
+							</MenuItem>
+							<MenuItem value="europe">Europe</MenuItem>
+							<MenuItem value="america">America</MenuItem>
+							<MenuItem value="asia">Asia</MenuItem>
+							<MenuItem value="africa">Africa</MenuItem>
+							<MenuItem value="oceania">Oceania</MenuItem>
+						</Select>
+					</FormControl>
+				</Grid>
+			</Grid> */}
+
+			{/*<Grid item className="">
 					<Stack spacing={2} sx={{ width: 300 }}>
 						<SearchIcon />
 						<Autocomplete
@@ -84,9 +108,9 @@ function Home() {
 						/>
 					</Stack>
 				</Grid> */}
-				{/* //////////////////////////////////////////////// */}
-				{/* United country */}
-				{/* <Grid item className="">
+			{/* //////////////////////////////////////////////// */}
+			{/* United country */}
+			{/* <Grid item className="">
 					{countries.map((country) => {
 						const { capital, name, currenciesCode, currenciesName } = country;
 						// console.log(
@@ -123,9 +147,9 @@ function Home() {
 							</article>
 						);
 					})}
-				</Grid> */}
-			</Grid>
-		</>
+				</Grid>
+			</Grid> */}
+		</Container>
 	);
 }
 

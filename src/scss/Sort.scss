@@ -1,0 +1,20 @@
+@import './variables.scss';
+
+.sortContainer {
+	.hemeSearchBox {
+		display: flex;
+		align-items: center;
+		.homeSearchIcon {
+			margin-top: 15px;
+			margin-right: 5px;
+			color: $color-gray;
+		}
+		.homeSearchText {
+			margin: 0 5px;
+			width: 100%;
+		}
+
+		// .homeSearch + label {
+		// }
+	}
+}
