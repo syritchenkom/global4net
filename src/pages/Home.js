@@ -21,11 +21,11 @@ import '../scss/Pages.scss';
 
 function Home() {
 	const [countries, setCountries] = useState([]);
-	const [searchCountries, setSearchCountries] = useState('');
+	const [filredCountries, setFiltredCountries] = useState('');
 	const [string, setString] = useState('');
 
 	const searchChange = (event) => {
-		setSearchCountries(event.target.value);
+		setFiltredCountries(event.target.value);
 	};
 
 	useEffect(() => {
@@ -50,7 +50,12 @@ function Home() {
 				</Grid>
 			</Grid>
 
-			<Sort countries={countries} setCountries={setCountries} />
+			<Sort
+				countries={countries}
+				setCountries={setCountries}
+				filtred={filredCountries}
+				setFiltred={setFiltredCountries}
+			/>
 
 			{/* Sort Countries
 			<Grid container className="sortContainer">

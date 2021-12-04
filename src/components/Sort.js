@@ -6,37 +6,49 @@ import {
 	FormControl,
 	InputLabel,
 	MenuItem,
-	Select
+	Select,
+	Autocomplete
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
 import '../scss/Sort.scss';
 
-const Sort = ({ countries, setCountries }) => {
+const Sort = ({ countries, setCountries, filtred, setFiltred }) => {
 	const searchCountries = () => {};
-	const searchChange = () => {};
+	const filtredChange = (event) => {
+		setFiltred(event.target.value);
+	};
 	return (
 		<>
 			{/* Sort Countries */}
 			<Grid container className="sortContainer">
 				{/* Search Countries */}
 				<Grid item className="sortSearch">
-					<Box className="sortSearchBox">
-						<SearchIcon className="sortSearchIcon" />
-						<TextField
-							className="sortSearchText"
-							label="Search country"
-							checked={searchCountries}
-							onChange={searchChange}
-							variant="standard"
-						/>
-					</Box>
+					<SearchIcon className="sortSearchIcon" />
+					<Autocomplete
+						freeSolo
+						className="sortSearchBox"
+						disableClearable
+						// options={DataTransfer.map((option) => option.title)}
+						renderInput={(params) => (
+							<TextField
+								{...params}
+								className="sortSearchText"
+								label="Search country"
+								variant="standard"
+								inputProps={{
+									...params.InputProps,
+									type: 'search'
+								}}
+							/>
+						)}
+					/>
 				</Grid>
 				{/* Filter Countries */}
-				<Grid item className="homeFilter">
-					<FormControl variant="standard" className="homeFilterSearch">
+				<Grid item className="sortFilter">
+					<FormControl variant="standard" className="sortFilterSearch">
 						<InputLabel>Countries...</InputLabel>
-						<Select value={countries} label="Countries">
+						<Select value={filtred} onChange={filtredChange} label="Countries">
 							<MenuItem value="">
 								<em>None</em>
 							</MenuItem>
