@@ -1,23 +1,50 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
-	Box,
 	Grid,
 	TextField,
 	FormControl,
 	InputLabel,
 	MenuItem,
-	Select,
-	Autocomplete
+	Select
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
+import Countries from './Countries';
 import '../scss/Sort.scss';
 
-const Sort = ({ countries, setCountries, filtred, setFiltred }) => {
-	const searchCountries = () => {};
-	const filtredChange = (event) => {
-		setFiltred(event.target.value);
+const Sort = ({ country, setCountry, countries, setCountries }) => {
+	const [filteredCountries, setFilteredCountries] = useState('');
+	const [selectedRegion, setSelectedRegion] = useState('all');
+
+	const getFilteredCountries = (value) => {
+		return countries.filter((country) =>
+			country.region.toLowerCase().includes(value.toLowerCase())
+		);
 	};
+
+	const searchChange = (event) => {
+		const value = event.target?.value;
+		if (value) {
+			const filtered = getFilteredCountries(value);
+			setFilteredCountries(filtered);
+			return;
+		}
+		setFilteredCountries('');
+	};
+
+	const selectChange = (event) => {
+		const value = event.target?.value;
+		if (value) {
+			setSelectedRegion(value);
+			if (value !== 'all') {
+				const filtered = getFilteredCountries(value);
+				setFilteredCountries(filtered);
+				return;
+			}
+		}
+		setFilteredCountries('');
+	};
+
 	return (
 		<>
 			{/* Sort Countries */}
@@ -25,40 +52,51 @@ const Sort = ({ countries, setCountries, filtred, setFiltred }) => {
 				{/* Search Countries */}
 				<Grid item className="sortSearch">
 					<SearchIcon className="sortSearchIcon" />
-					<Autocomplete
-						freeSolo
-						className="sortSearchBox"
-						disableClearable
-						// options={DataTransfer.map((option) => option.title)}
-						renderInput={(params) => (
-							<TextField
-								{...params}
-								className="sortSearchText"
-								label="Search country"
-								variant="standard"
-								inputProps={{
-									...params.InputProps,
-									type: 'search'
-								}}
-							/>
-						)}
+
+					<TextField
+						className="sortSearchText"
+						label="Search country"
+						variant="standard"
+						onChange={searchChange}
+						inputProps={{
+							type: 'search'
+						}}
 					/>
 				</Grid>
-				{/* Filter Countries */}
-				<Grid item className="sortFilter">
-					<FormControl variant="standard" className="sortFilterSearch">
+
+				{/* Filtered Countries */}
+				<Grid item className="sortFiltered">
+					<FormControl
+						variant="standard"
+						className="sortFilteredSearch"
+						data={countries}>
 						<InputLabel>Countries...</InputLabel>
-						<Select value={filtred} onChange={filtredChange} label="Countries">
-							<MenuItem value="">
-								<em>None</em>
+						<Select
+							labelId="demo-multiple-name-label"
+							id="demo-multiple-name"
+							onChange={selectChange}
+							value={selectedRegion}
+							label="Countries...">
+							<MenuItem value={'all'}>
+								<em>All</em>
 							</MenuItem>
-							<MenuItem value="europe">Europe</MenuItem>
-							<MenuItem value="america">America</MenuItem>
-							<MenuItem value="asia">Asia</MenuItem>
-							<MenuItem value="africa">Africa</MenuItem>
-							<MenuItem value="oceania">Oceania</MenuItem>
+							<MenuItem value={'europe'}>Europe</MenuItem>
+							<MenuItem value={'america'}>America</MenuItem>
+							<MenuItem value={'asia'}>Asia</MenuItem>
+							<MenuItem value={'africa'}>Africa</MenuItem>
+							<MenuItem value={'oceania'}>Oceania</MenuItem>
 						</Select>
 					</FormControl>
+				</Grid>
+
+				{/* Countries List */}
+				<Grid item className="countriesList">
+					<Countries
+						country={country}
+						setCountry={setCountry}
+						countries={filteredCountries || countries}
+						setCountries={setCountries}
+					/>
 				</Grid>
 			</Grid>
 		</>
