@@ -8,8 +8,6 @@ import Details from './pages/Details';
 import Home from './pages/Home';
 
 function App() {
-	//  "homepage": "https://syritchenkom.github.io/Global4Netx/", "dependencies": {
-
 	return (
 		<>
 			<Grid container spacing={7}>

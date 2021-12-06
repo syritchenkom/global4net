@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import '../scss/Countries.scss';
 
+// \?/ look here
 const Countries = ({ country, setCountry, countries, setCountries }) => {
 	return (
 		<>
