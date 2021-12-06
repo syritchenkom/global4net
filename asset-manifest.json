@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Global4Netx/static/css/main.f0563fbf.chunk.css",
-    "main.js": "/Global4Netx/static/js/main.626a2947.chunk.js",
-    "main.js.map": "/Global4Netx/static/js/main.626a2947.chunk.js.map",
+    "main.css": "/Global4Netx/static/css/main.9b41b802.chunk.css",
+    "main.js": "/Global4Netx/static/js/main.fd1a6421.chunk.js",
+    "main.js.map": "/Global4Netx/static/js/main.fd1a6421.chunk.js.map",
     "runtime-main.js": "/Global4Netx/static/js/runtime-main.3ada01ed.js",
     "runtime-main.js.map": "/Global4Netx/static/js/runtime-main.3ada01ed.js.map",
     "static/js/2.ee2089f8.chunk.js": "/Global4Netx/static/js/2.ee2089f8.chunk.js",
     "static/js/2.ee2089f8.chunk.js.map": "/Global4Netx/static/js/2.ee2089f8.chunk.js.map",
     "index.html": "/Global4Netx/index.html",
-    "static/css/main.f0563fbf.chunk.css.map": "/Global4Netx/static/css/main.f0563fbf.chunk.css.map",
+    "static/css/main.9b41b802.chunk.css.map": "/Global4Netx/static/css/main.9b41b802.chunk.css.map",
     "static/js/2.ee2089f8.chunk.js.LICENSE.txt": "/Global4Netx/static/js/2.ee2089f8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.3ada01ed.js",
     "static/js/2.ee2089f8.chunk.js",
-    "static/css/main.f0563fbf.chunk.css",
-    "static/js/main.626a2947.chunk.js"
+    "static/css/main.9b41b802.chunk.css",
+    "static/js/main.fd1a6421.chunk.js"
   ]
 }
