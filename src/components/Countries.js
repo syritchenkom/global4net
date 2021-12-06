@@ -1,65 +1,64 @@
-import React, { useState, useEffect } from 'react';
-// import axios from 'axios';
+import React from 'react';
+import { Timeline } from '@mui/lab';
+import {
+	Card,
+	CardActionArea,
+	CardContent,
+	Grid,
+	Typography
+} from '@mui/material';
+import '../scss/Countries.scss';
 
-const url = 'https://restcountries.com/v2/name/united';
-
-const Countries = () => {
-	
-
-	const fetchCountryData = async () => {
-		const response = await fetch(url);
-		const countries = await response.json();
-		setCountries(countries);
-		// console.log(countries);
-	};
-
-	useEffect(() => {
-		fetchCountryData();
-	}, []);
-
+const Countries = ({ country, setCountry, countries, setCountries }) => {
 	return (
 		<>
-			{countries.map((country) => {
-				const { capital, name, currenciesCode } = country;
-				// console.log(
-				// 	country.currencies.forEach((currencySymbol) =>
-				// 		console.log(currencySymbol.symbol)
-				// 	)
-				// 	 country.currencies.forEach((country) => console.log(country.name))
-				// );
-				return (
-					<article key={currenciesCode}>
-						<div>
-							<h2>
-								Capital: <span>{capital}</span>
-							</h2>
-							<h3>{name}</h3>
+			<Grid className="countries">
+				<Timeline className="countriesUl">
+					{countries.map((country, index) => {
+						// console.log(countries);
+						const { capital, name, currencies, region } = country;
+						// const currencyCode = Object.keys(currencies)[0];
 
-							<h4>
-								Currenciess Name:
-								<span>
-									{country.currencies.forEach((currencyName) =>
-										console.log(currencyName.name)
-									)}
-								</span>
-							</h4>
-							<h4>
-								Currenciess Symbol:
-								<span>
-									{country.currencies.forEach((currencySymbol) =>
-										string(currencySymbol.symbol)
-									)}
-								</span>
-							</h4>
-							{/* <h4>{currencyName}</h4> */}
-
-							{/* {countries.map((currenciesName) =>
-								console.log(currenciesName.map((currencies) => currencies))
-							)} */}
-						</div>
-					</article>
-				);
-			})}
+						const currencyCode = Object.keys(currencies || {})[0];
+						return (
+							<Card key={index} className="countryCard">
+								<CardActionArea
+									className="countryButton"
+									href={`/details/${name}`}>
+									<CardContent className="countryPage">
+										<Typography
+											variant="h3"
+											component="h3"
+											className="countryTitle">
+											<span>{name.common}</span>
+										</Typography>
+										<Typography variant="h5" component="h5">
+											Capital:
+											<span>{capital?.[0]}</span>
+										</Typography>
+										<Typography variant="h5" component="h5">
+											Currency Code:
+											<span>{currencyCode}</span>
+										</Typography>
+										<Typography variant="h5" component="h5">
+											Currency Name:
+											<span>{currencies?.[currencyCode]?.name}</span>
+										</Typography>
+										<Typography variant="h5" component="h5" gutterBottom>
+											Currency Symbol:
+											<span>{currencies?.[currencyCode]?.symbol}</span>
+										</Typography>
+										<Typography variant="h5" component="h5" gutterBottom>
+											Currency Region:
+											<span>{region}</span>
+										</Typography>
+									</CardContent>
+								</CardActionArea>
+							</Card>
+						);
+					})}
+				</Timeline>
+			</Grid>
 		</>
 	);
 };
