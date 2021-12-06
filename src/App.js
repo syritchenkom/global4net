@@ -17,9 +17,7 @@ function App() {
 					<BrowserRouter>
 						<Routes>
 							<Route path="/" element={<Home />} />
-							<Route path="/details" element={<Details />}>
-								Details
-							</Route>
+							<Route path="/details/:name" element={<Details />} />
 						</Routes>
 					</BrowserRouter>
 				</Grid>
