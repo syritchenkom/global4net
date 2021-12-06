@@ -1,11 +1,11 @@
 @import './variables.scss';
 
 .sortContainer {
-	width: 88% !important;
+	width: 90% !important;
 	position: absolute;
 	display: flex;
 	justify-content: space-between;
-	margin: 2.5rem 5rem;
+	margin: 2.5rem 4rem;
 	.sortSearch {
 		display: flex;
 		.sortSearchIcon {
@@ -23,9 +23,12 @@
 			}
 		}
 	}
-	.sortFilter {
-		.sortFilterSearch {
+	.sortFiltered {
+		.sortFilteredSearch {
 			width: 13rem;
 		}
+	}
+	.countriesList {
+		width: 100% !important;
 	}
 }
