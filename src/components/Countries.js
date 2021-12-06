@@ -15,10 +15,7 @@ const Countries = ({ country, setCountry, countries, setCountries }) => {
 			<Grid className="countries">
 				<Timeline className="countriesUl">
 					{countries.map((country, index) => {
-						// console.log(countries);
 						const { capital, name, currencies, region } = country;
-						// const currencyCode = Object.keys(currencies)[0];
-
 						const currencyCode = Object.keys(currencies || {})[0];
 						return (
 							<Card key={index} className="countryCard">
