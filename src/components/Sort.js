@@ -15,18 +15,30 @@ import '../scss/Sort.scss';
 const Sort = ({ country, setCountry, countries, setCountries }) => {
 	const [filteredCountries, setFilteredCountries] = useState('');
 	const [selectedRegion, setSelectedRegion] = useState('all');
+	const [searchCountry, setSearchCountry] = useState('');
 
 	const getFilteredCountries = (value) => {
-		return countries.filter((country) =>
-			country.region.toLowerCase().includes(value.toLowerCase())
+		return countries.filter(
+			(country) =>
+				country.region.toLowerCase().includes(value.toLowerCase()) &&
+				country.name?.common.toLowerCase().includes(searchCountry.toLowerCase())
+		);
+	};
+
+	const getSearchCountries = (value) => {
+		setSearchCountry(value);
+		return countries.filter(
+			(country) =>
+				country.name?.common.toLowerCase().includes(value.toLowerCase()) &&
+				country.region.toLowerCase().includes(selectedRegion.toLowerCase())
 		);
 	};
 
 	const searchChange = (event) => {
 		const value = event.target?.value;
 		if (value) {
-			const filtered = getFilteredCountries(value);
-			setFilteredCountries(filtered);
+			const search = getSearchCountries(value);
+			setFilteredCountries(search);
 			return;
 		}
 		setFilteredCountries('');
@@ -55,7 +67,7 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 
 					<TextField
 						className="sortSearchText"
-						label="Search country"
+						label="Search country..."
 						variant="standard"
 						onChange={searchChange}
 						inputProps={{
@@ -70,7 +82,7 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 						variant="standard"
 						className="sortFilteredSearch"
 						data={countries}>
-						<InputLabel>Countries...</InputLabel>
+						<InputLabel>Region...</InputLabel>
 						<Select
 							labelId="demo-multiple-name-label"
 							id="demo-multiple-name"
