@@ -6,7 +6,6 @@ import axios from 'axios';
 
 import Sort from '../components/Sort';
 import '../scss/Pages.scss';
-import Countries from '../components/Countries';
 
 function Home() {
 	const [country, setCountry] = useState('');
@@ -47,7 +46,6 @@ function Home() {
 				countries={countries}
 				setCountries={setCountries}
 			/>
-			<Countries />
 		</Container>
 	);
 }
