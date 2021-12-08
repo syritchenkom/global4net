@@ -8,20 +8,24 @@ import {
 	Typography
 } from '@mui/material';
 import '../scss/Countries.scss';
-import Details from '../pages/Details';
+
+// import Details from '../pages/Details';
 
 const Countries = ({ country, setCountry, countries, setCountries }) => {
 	return (
 		<>
-			<Grid className="countries">
+			<Grid item className="countries">
 				<Timeline className="countriesUl">
 					{countries.map((country, index) => {
 						const { capital, name, region } = country;
+
+						// const currencyCode = Object.keys(currencies || {})[0];
+
 						return (
 							<Card key={index} className="countryCard">
 								<CardActionArea
 									className="countryButton"
-									href={`/details/${name}`}>
+									href={`/details/${name.common}`}>
 									<CardContent className="countryPage">
 										<Typography
 											variant="h3"
@@ -33,9 +37,8 @@ const Countries = ({ country, setCountry, countries, setCountries }) => {
 											Capital:
 											<span>{capital?.[0]}</span>
 										</Typography>
-
 										<Typography variant="h5" component="h5" gutterBottom>
-											Currency Region:
+											Region:
 											<span>{region}</span>
 										</Typography>
 									</CardContent>
@@ -45,7 +48,7 @@ const Countries = ({ country, setCountry, countries, setCountries }) => {
 					})}
 				</Timeline>
 			</Grid>
-			<Details />
+			{/* <Details countries={countries} /> */}
 		</>
 	);
 };
