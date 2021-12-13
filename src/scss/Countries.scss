@@ -29,3 +29,13 @@
 		}
 	}
 }
+
+@media (max-width: 430px) {
+	.countries {
+		.countriesUl {
+			.countryCard {
+				width: 95%;
+			}
+		}
+	}
+}
