@@ -5,7 +5,8 @@ import {
 	FormControl,
 	InputLabel,
 	MenuItem,
-	Select
+	Select,
+	Container
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -17,6 +18,7 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 	const [selectedRegion, setSelectedRegion] = useState('all');
 	const [searchCountry, setSearchCountry] = useState('');
 
+	// Filtred regions
 	const getFilteredCountries = (value) => {
 		return countries.filter(
 			(country) =>
@@ -25,27 +27,42 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 		);
 	};
 
+	// Search countries
 	const getSearchCountries = (value) => {
-		setSearchCountry(value);
 		return countries.filter(
 			(country) =>
-				country.name?.common.toLowerCase().includes(value.toLowerCase()) &&
-				country.region.toLowerCase().includes(selectedRegion.toLowerCase())
+				// country.name?.common.toLowerCase().includes(value.toLowerCase()) &&
+				// country?.region
+				// 	.toLowerCase()
+				// 	.includes(selectedRegion.toLocaleLowerCase())
+				country.name?.common.toLowerCase().includes(value.toLowerCase()) ||
+				!country.region.toLowerCase().includes(selectedRegion.toLowerCase())
 		);
+		// setSearchCountry();
 	};
 
+	//Search Function
 	const searchChange = (event) => {
+		//send information about search country
 		const value = event.target?.value;
+
 		if (value) {
 			const search = getSearchCountries(value);
+			console.log('value', value);
+			//console.log(setSearchCountry(search));
+			console.log('search:', search);
+			// setSearchCountry(search);s
 			setFilteredCountries(search);
 			return;
 		}
-		setFilteredCountries('');
+		// setSearchCountry('');
+		setSearchCountry('');
 	};
-
+	//Filtred Function
 	const selectChange = (event) => {
+		//send information about region
 		const value = event.target?.value;
+		console.log('selectChange:', value);
 		if (value) {
 			setSelectedRegion(value);
 			if (value !== 'all') {
@@ -58,13 +75,12 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 	};
 
 	return (
-		<>
+		<Container className="sort">
 			{/* Sort Countries */}
 			<Grid container className="sortContainer">
 				{/* Search Countries */}
 				<Grid item className="sortSearch">
 					<SearchIcon className="sortSearchIcon" />
-
 					<TextField
 						className="sortSearchText"
 						label="Search country..."
@@ -75,7 +91,6 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 						}}
 					/>
 				</Grid>
-
 				{/* Filtered Countries */}
 				<Grid item className="sortFiltered">
 					<FormControl
@@ -100,19 +115,129 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 						</Select>
 					</FormControl>
 				</Grid>
-
-				{/* Countries List */}
-				<Grid item className="countriesList">
+			</Grid>
+			{/* Countries List */}
+			<Grid container className="countriesList">
+				<Grid item>
 					<Countries
 						country={country}
 						setCountry={setCountry}
-						countries={filteredCountries || countries}
+						countries={filteredCountries || searchCountry || countries}
+						//1 countries={filteredCountries || countries}
 						setCountries={setCountries}
 					/>
 				</Grid>
 			</Grid>
-		</>
+		</Container>
 	);
 };
+
+// const Sort = ({ country, setCountry, countries, setCountries }) => {
+// 	const [filteredCountries, setFilteredCountries] = useState('');
+// 	const [selectedRegion, setSelectedRegion] = useState('all');
+// 	const [searchCountry, setSearchCountry] = useState('');
+
+// 	// Filtred regions
+// 	const getFilteredCountries = (value) => {
+// 		return countries.filter(
+// 			(country) =>
+// 				country.region.toLowerCase().includes(value.toLowerCase()) &&
+// 				country.name?.common.toLowerCase().includes(searchCountry.toLowerCase())
+// 		);
+// 	};
+
+// 	// Search countries
+// 	const getSearchCountries = (value) => {
+// 		return countries.filter(
+// 			(country) =>
+// 				// country.name?.common.toLowerCase().includes(value.toLowerCase())
+// 				country.name?.common.toLowerCase().includes(value.toLowerCase()) &&
+// 				country.region.toLowerCase().includes(selectedRegion.toLowerCase())
+// 		);
+// 	};
+
+// 	const searchChange = (event) => {
+// 		//send information about search country
+// 		const value = event.target?.value;
+// 		console.log('searchChange:', value);
+// 		if (value) {
+// 			const search = getSearchCountries(value);
+// 			setFilteredCountries(search);
+// 			return;
+// 		}
+// 		setFilteredCountries('');
+// 	};
+
+// 	const selectChange = (event) => {
+// 		//send information about region
+// 		const value = event.target?.value;
+// 		console.log('selectChange:', value);
+// 		if (value) {
+// 			setSelectedRegion(value);
+// 			if (value !== 'all') {
+// 				const filtered = getFilteredCountries(value);
+// 				setFilteredCountries(filtered);
+// 				return;
+// 			}
+// 		}
+// 		setFilteredCountries('');
+// 	};
+
+// 	return (
+// 		<>
+// 			{/* Sort Countries */}
+// 			<Grid container className="sortContainer">
+// 				{/* Search Countries */}
+// 				<Grid item className="sortSearch">
+// 					<SearchIcon className="sortSearchIcon" />
+// 					<TextField
+// 						className="sortSearchText"
+// 						label="Search country..."
+// 						variant="standard"
+// 						onChange={searchChange}
+// 						inputProps={{
+// 							type: 'search'
+// 						}}
+// 					/>
+// 				</Grid>
+
+// 				{/* Filtered Countries */}
+// 				<Grid item className="sortFiltered">
+// 					<FormControl
+// 						variant="standard"
+// 						className="sortFilteredSearch"
+// 						data={countries}>
+// 						<InputLabel>Region...</InputLabel>
+// 						<Select
+// 							labelId="demo-multiple-name-label"
+// 							id="demo-multiple-name"
+// 							onChange={selectChange}
+// 							value={selectedRegion}
+// 							label="Countries...">
+// 							<MenuItem value={'all'}>
+// 								<em>All</em>
+// 							</MenuItem>
+// 							<MenuItem value={'europe'}>Europe</MenuItem>
+// 							<MenuItem value={'america'}>America</MenuItem>
+// 							<MenuItem value={'asia'}>Asia</MenuItem>
+// 							<MenuItem value={'africa'}>Africa</MenuItem>
+// 							<MenuItem value={'oceania'}>Oceania</MenuItem>
+// 						</Select>
+// 					</FormControl>
+// 				</Grid>
+
+// 				{/* Countries List */}
+// 				<Grid item className="countriesList">
+// 					<Countries
+// 						country={country}
+// 						setCountry={setCountry}
+// 						countries={filteredCountries || countries}
+// 						setCountries={setCountries}
+// 					/>
+// 				</Grid>
+// 			</Grid>
+// 		</>
+// 	);
+// };
 
 export default Sort;
