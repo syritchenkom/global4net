@@ -1,22 +1,16 @@
 @import './variables.scss';
 
 .sortContainer {
-	width: 90% !important;
+	width: 96%;
 	position: absolute;
-	display: flex;
+	margin-top: 2.5rem;
 	justify-content: space-between;
-	margin: 2.5rem 4rem;
+
 	.sortSearch {
-		display: flex;
 		.sortSearchIcon {
 			margin-top: 20px;
 
 			color: $color-dark-gray;
-		}
-		.sortSearchBox {
-			display: flex;
-			align-items: center;
-			width: 13rem;
 
 			.sortSearchText {
 				margin: 0 5px;
@@ -29,7 +23,37 @@
 			width: 13rem;
 		}
 	}
-	.countriesList {
-		width: 100% !important;
+}
+
+.countriesList {
+	margin-top: 6rem;
+	width: 96%;
+	position: absolute;
+}
+
+@media (max-width: 430px) {
+	.sort {
+		.sortContainer {
+			flex-direction: column !important;
+			align-items: center;
+			width: 92% !important;
+			.sortSearch {
+				width: 100%;
+				margin-bottom: 0.5rem;
+				.sortSearchText {
+					width: 93%;
+				}
+			}
+			.sortFiltered {
+				width: 96%;
+				.sortFilteredSearch {
+					width: 100%;
+				}
+			}
+		}
+		.countriesList {
+			margin-top: 9.5rem;
+			width: 92%;
+		}
 	}
 }
