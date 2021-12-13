@@ -2,7 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
-import { Card, CardContent, Grid, Link, Typography } from '@mui/material';
+import {
+	Card,
+	CardActionArea,
+	CardContent,
+	Grid,
+	Typography
+} from '@mui/material';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import '../scss/Countries.scss';
@@ -31,19 +37,19 @@ const Details = () => {
 		<>
 			<Grid container className="details">
 				<Grid item className="detailsCountry">
-					<Card className="detailsCard countryCard">
-						<div className="detailsLink">
-							<Link className="detailsLinkHome" href="/">
-								<ArrowBackIosIcon />
-								Back to Home
-							</Link>
-						</div>
+					<CardActionArea className="detailsArrow" href="/">
+						<Card className="detailsLinkHome">
+							<ArrowBackIosIcon />
+							Back to Home
+						</Card>
+					</CardActionArea>
+					<Card className="detailsCard">
 						<CardContent className="detailsPage">
-							<Typography variant="h5" component="h5" className="detailsTitle">
+							<Typography variant="h5" component="h5" className="detailsText">
 								Capital:
 								<span>{country.capital?.[0]}</span>
 							</Typography>
-							<Typography variant="h4" component="h4">
+							<Typography variant="h5" component="h5">
 								Name:
 								<span>{country.name?.common}</span>
 							</Typography>
