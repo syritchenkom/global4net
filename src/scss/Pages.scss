@@ -13,44 +13,40 @@
 }
 
 .details {
+	height: 100%;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
 	.detailsCountry {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		.detailsCard {
-			width: 70%;
-			height: 65%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			.detailsLink {
-				width: 100%;
-				height: 3rem;
-				padding: 3rem 2rem;
-				.detailsLinkHome {
-					display: flex;
-					align-items: center;
-					color: $color-dark-gray;
-				}
-				.detailsLinkHome:hover {
-					color: red;
-				}
+		flex-direction: column;
+		.detailsArrow {
+			.detailsLinkHome {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: $color-dark-gray;
 			}
+		}
+		.detailsLinkHome:hover {
+			color: red;
+		}
+		.detailsCard {
 			.detailsPage {
-				padding: 1rem;
-				.detailsTitle {
-					text-align: center;
-					font-weight: bold;
-				}
 				h5 > span {
 					padding-left: 1rem;
 					font-weight: bold;
 				}
 			}
 		}
+	}
+}
+
+@media (max-width: 430px) {
+	.details {
+		margin: 10px;
+		height: 100% !important;
+		position: absolute;
+		width: 95% !important;
+		align-items: center;
 	}
 }
