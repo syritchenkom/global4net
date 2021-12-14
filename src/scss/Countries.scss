@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './variables';
 
 .countries {
 	.countriesUl {
@@ -7,7 +7,7 @@
 		justify-content: space-between;
 		.countryCard {
 			width: 31%;
-			margin: 5px 10px;
+			margin: 10px 0;
 			.countryButton {
 				display: flex;
 				height: 100%;
@@ -30,11 +30,35 @@
 	}
 }
 
-@media (max-width: 430px) {
+@media (max-width: 425px) {
 	.countries {
 		.countriesUl {
 			.countryCard {
-				width: 95%;
+				width: 100%;
+				margin: 10px 0;
+			}
+		}
+	}
+}
+
+// @media (max-width: 768px) {
+// 	.countries {
+// 		.countriesUl {
+// 			.countryCard {
+// 				width: 49%;
+// 				margin: 10px 0;
+// 			}
+// 		}
+// 	}
+// }
+
+@media (min-width: 1025px) {
+	.countries {
+		width: 70rem;
+		.countriesUl {
+			.countryCard {
+				width: 32%;
+				margin: 10px 0;
 			}
 		}
 	}
