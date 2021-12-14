@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './base';
 
 .home {
 	margin: 0 !important;
@@ -41,7 +41,12 @@
 	}
 }
 
-@media (max-width: 430px) {
+@media (max-width: 425px) {
+	.home {
+		.homeTitle {
+			width: 100%;
+		}
+	}
 	.details {
 		margin: 10px;
 		height: 100% !important;
