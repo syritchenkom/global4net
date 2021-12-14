@@ -1,7 +1,7 @@
-@import './variables.scss';
+@import './variables';
 
 .sortContainer {
-	width: 96%;
+	width: 95%;
 	position: absolute;
 	margin-top: 2.5rem;
 	justify-content: space-between;
@@ -27,33 +27,50 @@
 
 .countriesList {
 	margin-top: 6rem;
-	width: 96%;
+	width: 95%;
 	position: absolute;
 }
 
-@media (max-width: 430px) {
+@media (max-width: 425px) {
 	.sort {
 		.sortContainer {
-			flex-direction: column !important;
-			align-items: center;
-			width: 92% !important;
+			justify-content: center;
+			width: 92%;
 			.sortSearch {
-				width: 100%;
 				margin-bottom: 0.5rem;
-				.sortSearchText {
-					width: 93%;
-				}
 			}
 			.sortFiltered {
-				width: 96%;
 				.sortFilteredSearch {
-					width: 100%;
+					width: 14rem;
 				}
 			}
 		}
 		.countriesList {
 			margin-top: 9.5rem;
+			justify-content: center;
 			width: 92%;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.sort {
+		.sortContainer {
+			width: 95%;
+		}
+		.countriesList {
+			width: 95%;
+		}
+	}
+}
+
+@media (min-width: 769px) {
+	.sort {
+		.sortContainer {
+			width: 95%;
+		}
+		.countriesList {
+			width: 95%;
 		}
 	}
 }
