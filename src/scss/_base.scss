@@ -1,0 +1,28 @@
+//color options
+@import './variables';
+
+//all basic setup, colors amd fonts
+@import './reset';
+body {
+	background-color: $color-gray;
+	overflow: auto !important;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	.container {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+
+	img {
+		max-width: 100%;
+	}
+
+	code {
+		font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+			monospace;
+	}
+}
