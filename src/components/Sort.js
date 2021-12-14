@@ -20,6 +20,14 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 
 	// Filtred regions
 	const getFilteredCountries = (value) => {
+		if (value === 'all' && !searchCountry) {
+			return countries;
+		}
+		if (value === 'all' && searchCountry) {
+			return countries.filter((country) =>
+				country.name?.common.toLowerCase().includes(searchCountry.toLowerCase())
+			);
+		}
 		return countries.filter(
 			(country) =>
 				country.region.toLowerCase().includes(value.toLowerCase()) &&
@@ -29,47 +37,43 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 
 	// Search countries
 	const getSearchCountries = (value) => {
-		return countries.filter(
-			(country) =>
-				// country.name?.common.toLowerCase().includes(value.toLowerCase()) &&
-				// country?.region
-				// 	.toLowerCase()
-				// 	.includes(selectedRegion.toLocaleLowerCase())
-				country.name?.common.toLowerCase().includes(value.toLowerCase()) ||
-				!country.region.toLowerCase().includes(selectedRegion.toLowerCase())
+		if (selectedRegion !== 'all') {
+			return countries.filter(
+				(country) =>
+					country.name?.common.toLowerCase().includes(value.toLowerCase()) &&
+					country.region.toLowerCase().includes(selectedRegion.toLowerCase())
+			);
+		}
+		console.log('selectedRegion', selectedRegion, value);
+		return countries.filter((country) =>
+			country.name?.common.toLowerCase().includes(value.toLowerCase())
 		);
-		// setSearchCountry();
 	};
 
 	//Search Function
 	const searchChange = (event) => {
 		//send information about search country
 		const value = event.target?.value;
-
+		setSearchCountry(value);
 		if (value) {
 			const search = getSearchCountries(value);
 			console.log('value', value);
-			//console.log(setSearchCountry(search));
 			console.log('search:', search);
-			// setSearchCountry(search);s
 			setFilteredCountries(search);
 			return;
 		}
-		// setSearchCountry('');
 		setSearchCountry('');
 	};
+
 	//Filtred Function
 	const selectChange = (event) => {
 		//send information about region
 		const value = event.target?.value;
-		console.log('selectChange:', value);
+		setSelectedRegion(value);
 		if (value) {
-			setSelectedRegion(value);
-			if (value !== 'all') {
-				const filtered = getFilteredCountries(value);
-				setFilteredCountries(filtered);
-				return;
-			}
+			const filtered = getFilteredCountries(value);
+			setFilteredCountries(filtered);
+			return;
 		}
 		setFilteredCountries('');
 	};
@@ -122,7 +126,7 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 					<Countries
 						country={country}
 						setCountry={setCountry}
-						countries={filteredCountries || searchCountry || countries}
+						countries={filteredCountries || countries}
 						//1 countries={filteredCountries || countries}
 						setCountries={setCountries}
 					/>
