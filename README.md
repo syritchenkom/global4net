@@ -1,3 +1,3 @@
-# Getting Started project Global4Netx
+# Getting Started project Global4Net
 
-This project was run here => [Run Global4Netx](https://syritchenkom.github.io/global4net/).
+This project was run here => [Run Global4Net](https://syritchenkom.github.io/global4net/).
