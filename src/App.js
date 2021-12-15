@@ -8,12 +8,12 @@ import Details from './pages/Details';
 import Home from './pages/Home';
 
 function App() {
-	//"homepage": "https://syritchenkom.github.io/global4net/",
 	return (
 		<>
 			<Grid container spacing={7}>
 				<Grid item xs={12} sm={12} md={4} lg={3}>
 					<BrowserRouter>
+						{/* Routes render all */}
 						<Routes>
 							<Route exact path="/" element={<Home />} />
 							<Route path="/details/:name" element={<Details />} />
