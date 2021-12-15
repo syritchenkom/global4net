@@ -4,8 +4,8 @@ import { Grid, Typography, Container } from '@mui/material';
 
 import axios from 'axios';
 
-import Sort from '../components/Sort';
-import '../scss/Pages.scss';
+import Sort from '../components/Sort/Sort';
+import './Pages.scss';
 
 function Home() {
 	const [country, setCountry] = useState('');
@@ -20,7 +20,7 @@ function Home() {
 			);
 		});
 	}, []);
-
+	// Loading message for array
 	if (!countries?.length) {
 		return (
 			<Typography variant="h5" component="h5">
