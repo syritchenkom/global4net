@@ -1,0 +1,57 @@
+@import './base';
+
+.home {
+	margin: 0 !important;
+	padding: 0 !important;
+	.homeTitle {
+		width: 100%;
+		position: absolute;
+		display: flex;
+		justify-content: center;
+		background-color: $color-white;
+	}
+}
+
+.details {
+	height: 100%;
+	position: absolute;
+	justify-content: center;
+	align-items: center;
+	.detailsCountry {
+		flex-direction: column;
+		.detailsArrow {
+			.detailsLinkHome {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				color: $color-dark-gray;
+			}
+		}
+		.detailsLinkHome:hover {
+			color: red;
+		}
+		.detailsCard {
+			.detailsPage {
+				h5 > span {
+					padding-left: 1rem;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	.home {
+		.homeTitle {
+			width: 100%;
+		}
+	}
+	.details {
+		margin: 10px;
+		height: 100% !important;
+		position: absolute;
+		width: 95% !important;
+		align-items: center;
+	}
+}

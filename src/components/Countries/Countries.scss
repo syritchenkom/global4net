@@ -1,0 +1,64 @@
+@import '../../scss/variables';
+
+.countries {
+	.countriesUl {
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-between;
+		.countryCard {
+			width: 31%;
+			margin: 10px 0;
+			.countryButton {
+				display: flex;
+				height: 100%;
+				.countryPage {
+					padding: 1rem;
+					.countryTitle {
+						text-align: center;
+						font-weight: bold;
+					}
+					h5 > span {
+						padding-left: 1rem;
+						font-weight: bold;
+					}
+				}
+			}
+			.countryButton:hover {
+				background-color: $color-silver;
+			}
+		}
+	}
+}
+
+@media (max-width: 425px) {
+	.countries {
+		.countriesUl {
+			.countryCard {
+				width: 100% !important;
+			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.countries {
+		.countriesUl {
+			.countryCard {
+				width: 49%;
+				margin: 10px 0;
+			}
+		}
+	}
+}
+
+@media (min-width: 1025px) {
+	.countries {
+		width: 100%;
+		.countriesUl {
+			.countryCard {
+				width: 32%;
+				margin: 10px 0;
+			}
+		}
+	}
+}
