@@ -11,12 +11,10 @@ import {
 } from '@mui/material';
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import '../scss/Countries.scss';
-import '../scss/Pages.scss';
+import './Pages.scss';
 import { useParams } from 'react-router';
 
 const Details = () => {
-	// const [country, setCountry] = useState({});
 	const [country, setCountry] = useState();
 	const params = useParams();
 
@@ -24,14 +22,17 @@ const Details = () => {
 		axios
 			.get(`https://restcountries.com/v3.1/name/${params.name.toLowerCase()}`)
 			.then((res) => {
-				// console.log(res);
 				setCountry(res.data[0]);
 			});
 	}, [params.name]);
+	//checking
 	if (!country) {
-		return <div>No details</div>;
+		return <div>Loading details...</div>;
 	}
+
 	const { currencies } = country;
+
+	// Take keys from object
 	const currencyNames = Object.keys(currencies);
 	return (
 		<>
@@ -43,8 +44,10 @@ const Details = () => {
 							Back to Home
 						</Card>
 					</CardActionArea>
+					{/* Card items */}
 					<Card className="detailsCard">
 						<CardContent className="detailsPage">
+							{/* Object information for card */}
 							<Typography variant="h5" component="h5" className="detailsText">
 								Capital:
 								<span>{country.capital?.[0]}</span>
@@ -56,6 +59,7 @@ const Details = () => {
 							{currencyNames.map((currency, index) => {
 								return (
 									<div key={index}>
+										{/* Details object information */}
 										<Typography variant="h5" component="h5">
 											Currency Code:
 											<span>{currency}</span>
