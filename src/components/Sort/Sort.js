@@ -18,13 +18,12 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 	const [selectedRegion, setSelectedRegion] = useState('all');
 	const [searchCountry, setSearchCountry] = useState('');
 
-	// Filtred regions
+	// Filtered regions
 	const getFilteredCountries = (value) => {
 		if (value === 'all' && !searchCountry) {
 			return countries;
 		}
 		if (value === 'all' && searchCountry) {
-			console.log(countries);
 			return countries.filter((country) =>
 				country.name?.common.toLowerCase().includes(searchCountry.toLowerCase())
 			);
@@ -63,7 +62,7 @@ const Sort = ({ country, setCountry, countries, setCountries }) => {
 		setSearchCountry('');
 	};
 
-	//Filtred Function
+	//Filtered Function
 	const selectChange = (event) => {
 		//information about region
 		const value = event.target?.value;
