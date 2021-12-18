@@ -15,8 +15,8 @@ function App() {
 					<BrowserRouter>
 						{/* Routes render all */}
 						<Routes>
-							<Route exact path="/" element={<Home />} />
-							<Route path="/details/:name" element={<Details />} />
+							<Route exact path="global4net/" element={<Home />} />
+							<Route path="global4net/details/:name" element={<Details />} />
 						</Routes>
 					</BrowserRouter>
 				</Grid>
