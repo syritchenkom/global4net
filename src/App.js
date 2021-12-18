@@ -15,10 +15,10 @@ function App() {
 					<BrowserRouter>
 						{/* Routes render all */}
 						<Routes>
-							<Route exact path="global4net/" element={<Home />} />
+							<Route exact path="/global4net/" element={<Home />} />
 							<Route
 								exact
-								path="global4net/details/:name"
+								path="/global4net/details/:name"
 								element={<Details />}
 							/>
 						</Routes>
