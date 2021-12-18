@@ -1,0 +1,80 @@
+.sortContainer {
+  width: 95%;
+  position: absolute;
+  margin-top: 2.5rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sortContainer .sortSearch .sortSearchIcon {
+  margin-top: 20px;
+  color: #676767;
+}
+
+.sortContainer .sortSearch .sortSearchIcon .sortSearchText {
+  margin: 0 5px;
+  width: 100%;
+}
+
+.sortContainer .sortFiltered .sortFilteredSearch {
+  width: 13rem;
+}
+
+.countriesList {
+  margin-top: 6rem;
+  width: 95%;
+  position: absolute;
+}
+
+@media (max-width: 425px) {
+  .sort .sortContainer {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 92% !important;
+  }
+  .sort .sortContainer .sortSearch {
+    margin-bottom: 0.5rem;
+  }
+  .sort .sortContainer .sortFiltered .sortFilteredSearch {
+    width: 14rem;
+  }
+  .sort .countriesList {
+    margin-top: 9.5rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 92% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sort .sortContainer {
+    width: 93.5%;
+  }
+  .sort .countriesList {
+    width: 93.5%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sort .sortContainer {
+    width: 95%;
+  }
+  .sort .countriesList {
+    display: inline-block;
+    width: 95%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .sort .sortContainer {
+    width: 96%;
+  }
+  .sort .countriesList {
+    display: inline-block;
+    width: 96%;
+  }
+}
+/*# sourceMappingURL=Sort.css.map */

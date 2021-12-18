@@ -1,0 +1,65 @@
+.countries .countriesUl {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.countries .countriesUl .countryCard {
+  width: 31%;
+  margin: 10px 0;
+}
+
+.countries .countriesUl .countryCard .countryButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+}
+
+.countries .countriesUl .countryCard .countryButton .countryPage {
+  padding: 1rem;
+}
+
+.countries .countriesUl .countryCard .countryButton .countryPage .countryTitle {
+  text-align: center;
+  font-weight: bold;
+}
+
+.countries .countriesUl .countryCard .countryButton .countryPage h5 > span {
+  padding-left: 1rem;
+  font-weight: bold;
+}
+
+.countries .countriesUl .countryCard .countryButton:hover {
+  background-color: #aeaeae9e;
+}
+
+@media (max-width: 425px) {
+  .countries .countriesUl .countryCard {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .countries .countriesUl .countryCard {
+    width: 49%;
+    margin: 10px 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .countries {
+    width: 100%;
+  }
+  .countries .countriesUl .countryCard {
+    width: 32%;
+    margin: 10px 0;
+  }
+}
+/*# sourceMappingURL=Countries.css.map */
