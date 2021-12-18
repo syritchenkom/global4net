@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/global4net/static/css/main.0f085a07.chunk.css",
-    "main.js": "/global4net/static/js/main.3f21893e.chunk.js",
-    "main.js.map": "/global4net/static/js/main.3f21893e.chunk.js.map",
-    "runtime-main.js": "/global4net/static/js/runtime-main.7dd8cb4d.js",
-    "runtime-main.js.map": "/global4net/static/js/runtime-main.7dd8cb4d.js.map",
-    "static/js/2.f1b6d408.chunk.js": "/global4net/static/js/2.f1b6d408.chunk.js",
-    "static/js/2.f1b6d408.chunk.js.map": "/global4net/static/js/2.f1b6d408.chunk.js.map",
-    "index.html": "/global4net/index.html",
-    "static/css/main.0f085a07.chunk.css.map": "/global4net/static/css/main.0f085a07.chunk.css.map",
-    "static/js/2.f1b6d408.chunk.js.LICENSE.txt": "/global4net/static/js/2.f1b6d408.chunk.js.LICENSE.txt"
+    "main.css": "/global4net.github.io/static/css/main.0f085a07.chunk.css",
+    "main.js": "/global4net.github.io/static/js/main.e4a84e13.chunk.js",
+    "main.js.map": "/global4net.github.io/static/js/main.e4a84e13.chunk.js.map",
+    "runtime-main.js": "/global4net.github.io/static/js/runtime-main.970f6b18.js",
+    "runtime-main.js.map": "/global4net.github.io/static/js/runtime-main.970f6b18.js.map",
+    "static/js/2.f1b6d408.chunk.js": "/global4net.github.io/static/js/2.f1b6d408.chunk.js",
+    "static/js/2.f1b6d408.chunk.js.map": "/global4net.github.io/static/js/2.f1b6d408.chunk.js.map",
+    "index.html": "/global4net.github.io/index.html",
+    "static/css/main.0f085a07.chunk.css.map": "/global4net.github.io/static/css/main.0f085a07.chunk.css.map",
+    "static/js/2.f1b6d408.chunk.js.LICENSE.txt": "/global4net.github.io/static/js/2.f1b6d408.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7dd8cb4d.js",
+    "static/js/runtime-main.970f6b18.js",
     "static/js/2.f1b6d408.chunk.js",
     "static/css/main.0f085a07.chunk.css",
-    "static/js/main.3f21893e.chunk.js"
+    "static/js/main.e4a84e13.chunk.js"
   ]
 }
