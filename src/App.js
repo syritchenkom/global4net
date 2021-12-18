@@ -16,11 +16,7 @@ function App() {
 						{/* Routes render all */}
 						<Routes>
 							<Route exact path="/global4net/" element={<Home />} />
-							<Route
-								exact
-								path="/global4net/details/:name"
-								element={<Details />}
-							/>
+							<Route path="/details/:name" element={<Details />} />
 						</Routes>
 					</BrowserRouter>
 				</Grid>
