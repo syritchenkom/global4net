@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/global4net/static/css/main.0f085a07.chunk.css",
-    "main.js": "/global4net/static/js/main.c230e115.chunk.js",
-    "main.js.map": "/global4net/static/js/main.c230e115.chunk.js.map",
+    "main.css": "/global4net/static/css/main.4e094aa6.chunk.css",
+    "main.js": "/global4net/static/js/main.cb7ad2df.chunk.js",
+    "main.js.map": "/global4net/static/js/main.cb7ad2df.chunk.js.map",
     "runtime-main.js": "/global4net/static/js/runtime-main.7dd8cb4d.js",
     "runtime-main.js.map": "/global4net/static/js/runtime-main.7dd8cb4d.js.map",
     "static/js/2.f1b6d408.chunk.js": "/global4net/static/js/2.f1b6d408.chunk.js",
     "static/js/2.f1b6d408.chunk.js.map": "/global4net/static/js/2.f1b6d408.chunk.js.map",
     "index.html": "/global4net/index.html",
-    "static/css/main.0f085a07.chunk.css.map": "/global4net/static/css/main.0f085a07.chunk.css.map",
+    "static/css/main.4e094aa6.chunk.css.map": "/global4net/static/css/main.4e094aa6.chunk.css.map",
     "static/js/2.f1b6d408.chunk.js.LICENSE.txt": "/global4net/static/js/2.f1b6d408.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7dd8cb4d.js",
     "static/js/2.f1b6d408.chunk.js",
-    "static/css/main.0f085a07.chunk.css",
-    "static/js/main.c230e115.chunk.js"
+    "static/css/main.4e094aa6.chunk.css",
+    "static/js/main.cb7ad2df.chunk.js"
   ]
 }
