@@ -38,7 +38,7 @@ const Details = () => {
 		<>
 			<Grid container className="details">
 				<Grid item className="detailsCountry">
-					<CardActionArea className="detailsArrow" href="/">
+					<CardActionArea className="detailsArrow" href="/global4net/">
 						<Card className="detailsLinkHome">
 							<ArrowBackIosIcon />
 							Back to Home
