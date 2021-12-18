@@ -20,7 +20,7 @@ const Countries = ({ countries, setCountries }) => {
 							<Card key={index} className="countryCard">
 								<CardActionArea
 									className="countryButton"
-									href={`/details/${name.common}`}>
+									href={`/global4net/details/${name.common}`}>
 									<CardContent className="countryPage">
 										<Typography
 											variant="h3"
