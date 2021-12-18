@@ -1,6 +1,6 @@
 {
-  "name": "countries",
-  "homepage": "https://syritchenkom.github.io/countries/",
+  "name": "global4net",
+  "homepage": "https://syritchenkom.github.io/global4net/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
